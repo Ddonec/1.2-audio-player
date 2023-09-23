@@ -1,8 +1,25 @@
-.none{
-    display:none;
+*{
+  margin: 0;
+  padding: 0;
 }
 
+section {
+  margin: 0 auto;
+  width: 300px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin-top: calc((100vh - 478px)/2);
+  z-index: 5;
+  background-color: antiquewhite;
+  border: 20px solid antiquewhite;
+  border-radius: 40px;
+}
 
+.none {
+  display: none;
+}
 
 .btn {
   width: 100px;
@@ -10,4 +27,30 @@
 }
 .controls {
   display: flex;
+}
+
+#logo {
+  width: 300px;
+  height: 300px;
+}
+
+.progress-bar {
+  width: 100%;
+  background: gray;
+  height: 10px;
+  position: relative;
+}
+
+.progress-line {
+  width: 10%;
+  background: #000;
+  height: 10px;
+}
+
+#bg-img {
+  opacity: 0.3;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
 }
