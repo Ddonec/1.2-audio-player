@@ -1,0 +1,13 @@
+.none{
+    display:none;
+}
+
+
+
+.btn {
+  width: 100px;
+  height: 30px;
+}
+.controls {
+  display: flex;
+}
