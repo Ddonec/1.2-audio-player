@@ -46,9 +46,27 @@ let playlist = [
     img: "logo6",
     src: "poligon",
   },
+  {
+    title: "Где нас нет",
+    artist: "Oxxxymiron",
+    img: "logo7",
+    src: "oxxxymiron_-_gde-nas-net",
+  },
+  {
+    title: "Город под подошвой",
+    artist: "Oxxxymiron",
+    img: "logo8",
+    src: "oxxxymiron_-_gorod-pod-podoshvoy",
+  },
+  {
+    title: "Башня из слоновой кости",
+    artist: "Oxxxymiron",
+    img: "logo9",
+    src: "oxxxymiron_-_bashnya-iz-slonovoy-kosti",
+  },
 ];
 
-let indexOfSong = 1;
+let indexOfSong = 7;
 isMusicPaused = true;
 
 window.addEventListener("load", function () {
