@@ -61,7 +61,7 @@ function audioLoad(count) {
   artist.innerText = playlist[count - 1].artist;
   logo.src = `assets/images/${playlist[count - 1].img + ".jpg"}`;
   audio.src = `assets/audio/${playlist[count - 1].src + ".mp3"}`;
-  bg.src = `assets/images/${playlist[count - 1].img + ".jpg"}`
+  bg.src = `assets/images/${playlist[count - 1].img + ".jpg"}`;
 }
 
 // document.querySelector(".btn-play").addEventListener("click", function () {
@@ -90,12 +90,14 @@ function audioLoad(count) {
 play.addEventListener("click", function () {
   play.classList.add("none");
   pause.classList.remove("none");
+  logo.classList.add("active");
   audio.play();
 });
 //кнопка паузы (дефолтно скрыта)
 pause.addEventListener("click", function () {
   play.classList.remove("none");
   pause.classList.add("none");
+  logo.classList.remove("active");
   audio.pause();
 });
 //кнопка следующего трека
@@ -133,3 +135,16 @@ progressBar.addEventListener("click", function (value) {
   let clickedOffsetX = value.offsetX;
   audio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
 });
+// таймер под прогрессбаром
+audio.addEventListener("timeupdate", function (e) {
+  const time = e.target.currentTime;
+  // let m1 = String((time / 60).toFixed(2))
+  // let s1 = m1.split('.')[1]
+  // let value1 = Number(Math.trunc((m1) + (s1 / 60)).toFixed(2)
+  let m1 = Math.floor(time / 60) 
+  let s1 = Math.floor(time % 60);
+  const duration = e.target.duration;
+  let value1 = Math.floor(duration / 60) + ":" + Math.floor(duration % 60)
+  document.getElementById("start").textContent = m1 + ':' + s1;
+  document.getElementById("end").textContent = value1;
+}); 

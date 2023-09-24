@@ -9,7 +9,7 @@
   <body>
     <img id="bg-img" src="" alt="" />
     <section>
-      <div>Audio Player</div>
+      <div class="player-name">Audio Player</div>
         <audio id="audio1" src=""></audio>
         <div><img id="logo" src="" alt="" /></div>
         <div><span id="title">bnm,</span></div>
@@ -21,20 +21,24 @@
         <div class="progress-bar">
           <div class="progress-line" id="progress-line"></div>
         </div>
+        <div class="timer">
+          <div id="start">20:00</div>
+          <div id="end">13:33</div>
+        </div>
       <div class="controls">
-        <div id="div-prev">
+        <div id="div-prev" class="butt">
           <img src="assets/icon/icons8-перемотка-назад-64.png" alt="" />
         </div>
-        <div id="div-pause" class="none">
+        <div id="div-pause" class="none butt">
           <img src="assets/icon/icons8-кнопка-паузы-64.png" alt="" />
         </div>
-        <div id="div-play">
+        <div id="div-play" class="butt">
           <img
             src="assets/icon/icons8-кнопка-воспроизведения-круглая-64.png"
             alt=""
           />
         </div>
-        <div id="div-next">
+        <div id="div-next" class="butt">
           <img
             src="assets/icon/icons8-быстрая-перемотка-вперед-64.png"
             alt=""
