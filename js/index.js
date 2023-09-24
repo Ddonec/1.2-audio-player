@@ -9,6 +9,9 @@ let artist = document.getElementById("artist");
 let logo = document.getElementById("logo");
 let progressBar = document.querySelector(".progress-bar");
 let bg = document.getElementById("bg-img");
+
+var transformValue = window.getComputedStyle(logo).getPropertyValue("transform");
+
 let playlist = [
   {
     title: "Красота и уродство",
@@ -66,6 +69,8 @@ let playlist = [
   },
 ];
 
+
+
 let indexOfSong = 7;
 isMusicPaused = true;
 
@@ -117,6 +122,7 @@ function start() {
 
 play.addEventListener("click", function () {
   start();
+
 });
 //кнопка паузы (дефолтно скрыта)
 pause.addEventListener("click", function () {
@@ -124,6 +130,7 @@ pause.addEventListener("click", function () {
   pause.classList.add("none");
   logo.classList.remove("active");
   audio.pause();
+
 });
 //кнопка следующего трека
 function nextTrack() {
@@ -152,7 +159,6 @@ audio.addEventListener("timeupdate", function (e) {
   const time = e.target.currentTime;
   const duration = e.target.duration;
   let width = (time / duration) * 100;
-  console.log(width);
   document.getElementById("progress-line").style.width = `${width + "%"}`;
 });
 // клик по прогрессбару
@@ -173,11 +179,23 @@ audio.addEventListener("timeupdate", function (e) {
   const duration = e.target.duration;
   let s2 = Math.floor(duration % 60);
   let m2 = Math.floor(duration / 60);
-  if (s1 < 10){ s1 = '0' + s1} 
-  if (m1 < 10){ m1 = '0' + m1} 
-  if (s2 < 10){ s2 = '0' + s2} 
-  if (m2 < 10){ m2 = '0' + m2} 
-  
+  if (s1 < 10) {
+    s1 = "0" + s1;
+  }
+  if (m1 < 10) {
+    m1 = "0" + m1;
+  }
+  if (s2 < 10) {
+    s2 = "0" + s2;
+  }
+  if (m2 < 10) {
+    m2 = "0" + m2;
+  }
+  if (isNaN(duration)) {
+    value1 = ''
+  }
+
+
   let value1 = m2 + ":" + s2;
   document.getElementById("start").textContent = m1 + ":" + s1;
   document.getElementById("end").textContent = value1;
@@ -185,3 +203,6 @@ audio.addEventListener("timeupdate", function (e) {
 // переключить на следующий когда закончился трек
 
 audio.addEventListener("ended", nextTrack);
+
+
+;

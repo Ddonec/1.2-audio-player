@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -10,24 +10,37 @@ section {
   position: relative;
   flex-direction: column;
   align-items: center;
-  margin-top: calc((100vh - 478px)/2);
+  margin-top: calc((100vh - 585px) / 2);
   z-index: 5;
   background-color: antiquewhite;
   border: 20px solid antiquewhite;
   border-radius: 40px;
 }
+footer {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background: rgba(105, 104, 104, 0.337);
+  padding: 20px 0;
+  color: aliceblue;
+}
 
-.player-name{
+.player-name {
   font-size: 20px;
   padding: 0 0 20px 0;
 }
-.timer{
+.timer {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 .none {
   display: none;
+}
+.pointer {
+  cursor: pointer;
 }
 
 .btn {
@@ -44,17 +57,14 @@ section {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  transition: 2s;
-} 
+}
 .active {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
   animation: moving 10s infinite linear;
-  transition: 2s;
 }
 @keyframes moving {
-  100% {transform: rotate(360deg);}
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .progress-bar {
   width: 100%;
@@ -65,7 +75,7 @@ section {
 }
 
 .progress-line {
-  width: 10%;
+  width: 0%;
   background: #951cc2ad;
   height: 10px;
 }
@@ -76,4 +86,23 @@ section {
   width: 100vw;
   height: 100vh;
   top: 0px;
+}
+
+.icon-f {
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+}
+.social {
+  display: flex;
+  gap: 30px;
+}
+.rsschooldiv {
+  width: 120px;
+}
+.cop {
+  font-size: 10px;
+}
+.icon-f{
+  color: black;
 }
