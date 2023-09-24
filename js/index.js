@@ -85,13 +85,20 @@ function audioLoad(count) {
 //   audio.play();
 //   audio2.pause();
 //   console.log("ok");
+
 // });
-//кнопка старт
-play.addEventListener("click", function () {
+
+function start() {
   play.classList.add("none");
   pause.classList.remove("none");
   logo.classList.add("active");
   audio.play();
+}
+
+//кнопка старт
+
+play.addEventListener("click", function () {
+  start();
 });
 //кнопка паузы (дефолтно скрыта)
 pause.addEventListener("click", function () {
@@ -101,24 +108,26 @@ pause.addEventListener("click", function () {
   audio.pause();
 });
 //кнопка следующего трека
-next.addEventListener("click", function () {
+function nextTrack() {
   if (indexOfSong == playlist.length) {
     indexOfSong = 1;
-    audio.play();
+    start();
   } else indexOfSong++;
   console.log("ok");
   audioLoad(indexOfSong);
-  audio.play();
-});
+  start();
+}
+
+next.addEventListener("click", nextTrack);
 // кнопка прошлого трека
 prev.addEventListener("click", function () {
   if (indexOfSong == 1) {
     indexOfSong = playlist.length;
-    audio.play();
+    start();
   } else indexOfSong--;
   console.log("ok");
   audioLoad(indexOfSong);
-  audio.play();
+  start();
 });
 // прогрессбар
 audio.addEventListener("timeupdate", function (e) {
@@ -141,10 +150,20 @@ audio.addEventListener("timeupdate", function (e) {
   // let m1 = String((time / 60).toFixed(2))
   // let s1 = m1.split('.')[1]
   // let value1 = Number(Math.trunc((m1) + (s1 / 60)).toFixed(2)
-  let m1 = Math.floor(time / 60) 
+  let m1 = Math.floor(time / 60);
   let s1 = Math.floor(time % 60);
   const duration = e.target.duration;
-  let value1 = Math.floor(duration / 60) + ":" + Math.floor(duration % 60)
-  document.getElementById("start").textContent = m1 + ':' + s1;
+  let s2 = Math.floor(duration % 60);
+  let m2 = Math.floor(duration / 60);
+  if (s1 < 10){ s1 = '0' + s1} 
+  if (m1 < 10){ m1 = '0' + m1} 
+  if (s2 < 10){ s2 = '0' + s2} 
+  if (m2 < 10){ m2 = '0' + m2} 
+  
+  let value1 = m2 + ":" + s2;
+  document.getElementById("start").textContent = m1 + ":" + s1;
   document.getElementById("end").textContent = value1;
-}); 
+});
+// переключить на следующий когда закончился трек
+
+audio.addEventListener("ended", nextTrack);
