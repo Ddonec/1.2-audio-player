@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 0 auto;
+  width: 300px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin-top: calc((100vh - 585px) / 2);
+  z-index: 5;
+  background-color: antiquewhite;
+  border: 20px solid antiquewhite;
+  border-radius: 40px;
+}
+footer {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background: rgba(105, 104, 104, 0.337);
+  padding: 20px 0;
+  color: aliceblue;
+}
+
+.player-name {
+  font-size: 20px;
+  padding: 0 0 20px 0;
+}
+.timer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.none {
+  display: none;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.btn {
+  width: 100px;
+  height: 30px;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+#logo {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+.active {
+  animation: moving 10s infinite linear;
+}
+@keyframes moving {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.progress-bar {
+  width: 100%;
+  background: rgba(111, 96, 204, 0.498);
+  height: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.progress-line {
+  width: 0%;
+  background: #951cc2ad;
+  height: 10px;
+}
+
+#bg-img {
+  opacity: 0.3;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+}
+
+.icon-f {
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+}
+.social {
+  display: flex;
+  gap: 30px;
+}
+.rsschooldiv {
+  width: 120px;
+}
+.cop {
+  font-size: 10px;
+}
+.icon-f{
+  color: black;
+}
