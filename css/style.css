@@ -15,11 +15,13 @@ section {
   background-color: antiquewhite;
   border: 20px solid antiquewhite;
   border-radius: 40px;
+  max-height: 90%;
 }
 footer {
+  max-height: 10%;
   display: flex;
   justify-content: space-around;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   width: 100%;
   background: rgba(105, 104, 104, 0.337);
@@ -103,6 +105,26 @@ footer {
 .cop {
   font-size: 10px;
 }
-.icon-f{
+.icon-f {
   color: black;
+}
+
+@media (max-height: 580px) {
+  section {
+    scale: 0.8;
+    transition: .1s;
+  }
+  footer {
+    padding: 5px;
+  }
+}
+
+@media (max-height: 480px) {
+  section {
+    scale: 0.7;
+    transition: .1s;
+  }
+  footer {
+    padding: 5px;
+  }
 }
