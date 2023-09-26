@@ -115,6 +115,7 @@ function start() {
   play.classList.add("none");
   pause.classList.remove("none");
   logo.classList.add("active");
+  logo.style.animationPlayState = "running"
   audio.play();
 }
 
@@ -128,7 +129,8 @@ play.addEventListener("click", function () {
 pause.addEventListener("click", function () {
   play.classList.remove("none");
   pause.classList.add("none");
-  logo.classList.remove("active");
+  // logo.classList.remove("active");
+  logo.style.animationPlayState = "paused"
   audio.pause();
 
 });
